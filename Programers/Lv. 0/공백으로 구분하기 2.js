@@ -5,9 +5,7 @@ my_string에 나온 단어를 앞에서부터 순서대로 담은 문자열 배�
 */
 
 function solution(my_string) {
-  return my_string
-    .split(" ", my_string.length)
-    .filter((element, i) => element !== "");
+  return my_string.split(" ").filter((element) => element);
 }
 
 console.log(solution(" i    love  you")); //["i", "love", "you"]
