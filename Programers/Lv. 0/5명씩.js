@@ -16,3 +16,8 @@ function solution(names) {
 console.log(
   solution(["nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx"])
 ); //["nami", "vex"]
+
+//Case2
+function solution(names) {
+  return names.filter((name, i) => i % 5 === 0);
+}
