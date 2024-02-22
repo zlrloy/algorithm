@@ -7,7 +7,7 @@ function solution(num_list, n) {
   let array = [];
 
   for (let i = 0; i < num_list.length; i += n) {
-    array.push(...num_list.slice(i, i + 1));
+    array.push(num_list[i]);
   }
   return array;
 }
