@@ -4,12 +4,8 @@
 이 사실을 이용하여 음이 아닌 정수가 문자열 number로 주어질 때, 이 정수를 9로 나눈 나머지를 return 하는 solution 함수를 작성해주세요.
 */
 
-//Case1
 function solution(number) {
-  let sum = [...number].map(Number).reduce((a, b) => a + b, 0);
-  let remain = sum % 9;
-
-  return remain;
+  return [...number].map(Number).reduce((a, b) => a + b, 0) % 9;
 }
 
 console.log(solution("123")); //6
