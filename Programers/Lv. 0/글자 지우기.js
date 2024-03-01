@@ -17,3 +17,8 @@ function solution(my_string, indices) {
 }
 
 console.log(solution("apporoograpemmemprs", [1, 16, 6, 15, 0, 10, 11, 3])); //"programmers"
+
+//Case2
+function removeIndicesFromString(my_string, indices) {
+  return [...my_string].filter((_, i) => !indices.includes(i)).join("");
+}
