@@ -6,6 +6,21 @@
 
 //Case1. 잘못된 풀이
 //이 풀이는 보안에 굉장히 취약하다고 한다. 해커가 eval()을 사용하면 임의의 코드를 실행하기가 너무 쉬우니 지양하도록 하자(MDN 참고)
+//function solution(binomial) { return eval(binomial); }
+
+//Case2
 function solution(binomial) {
-  return eval(binomial);
+  const [a, op, b] = binomial.split(" ");
+  const operand1 = parseInt(a);
+  const operand2 = parseInt(b);
+
+  if (op === "+") {
+    return operand1 + operand2;
+  } else if (op === "-") {
+    return operand1 - operand2;
+  } else if (op === "*") {
+    return operand1 * operand2;
+  } else {
+    return "Invalid operator";
+  }
 }
