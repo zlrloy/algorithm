@@ -13,16 +13,18 @@
 //Case2
 function solution(binomial) {
   const [a, op, b] = binomial.split(" ");
-  const operand1 = parseInt(a);
-  const operand2 = parseInt(b);
+  const operlandA = parseInt(a);
+  const operlandB = parseInt(b);
 
   if (op === "+") {
-    return operand1 + operand2;
+    return operlandA + operlandB;
   } else if (op === "-") {
-    return operand1 - operand2;
+    return operlandA - operlandB;
   } else if (op === "*") {
-    return operand1 * operand2;
-  } else {
-    return "Invalid operator";
+    return operlandA * operlandB;
   }
 }
+
+console.log(solution("43 + 12")); //55
+console.log(solution("0 - 7777")); //-7777
+console.log(solution("40000 * 40000")); //1600000000
