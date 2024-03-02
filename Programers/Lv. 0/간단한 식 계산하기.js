@@ -7,6 +7,8 @@
 //Case1. 잘못된 풀이
 //이 풀이는 보안에 굉장히 취약하다고 한다. 해커가 eval()을 사용하면 임의의 코드를 실행하기가 너무 쉬우니 지양하도록 하자(MDN 참고)
 //function solution(binomial) { return eval(binomial); }
+//이 풀이도 간단하고 짧은 코드를 제공하지만 보안을 고려할 때 사용하는 것은 권장되지 않는다. 사용자 입력을 직접 코드로 실행하는 것은 보안 취약점을 남겨둘 수 있으니 안전하지 않은 환경에서 사용하는 것은 위험할 수 있다.
+//function solution(binomial) { return new Function(`return ${binomial}`)(); }
 
 //Case2
 function solution(binomial) {
