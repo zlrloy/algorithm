@@ -8,6 +8,7 @@
 3. k보다 큰 값만 return한다.
 */
 
+//Case1
 function solution(intStrs, k, s, l) {
   const substrings = intStrs.map((str) => str.slice(s, s + l));
   const filteredNumbers = substrings.map(Number).filter((num) => num > k);
@@ -17,3 +18,8 @@ function solution(intStrs, k, s, l) {
 console.log(
   solution(["0123456789", "9876543210", "9999999999999"], 50000, 5, 5)
 ); //[56789, 99999]
+
+//Case1 수정. 문자열 숫자로 변환 작업에서 Array.map(Number) 대신 +를 사용하여 한 줄로 작성하였다.
+function solution(intStrs, k, s, l) {
+  return intStrs.map((v) => +v.slice(s, s + l)).filter((v) => v > k);
+}
