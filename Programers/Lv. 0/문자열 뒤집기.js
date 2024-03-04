@@ -13,5 +13,17 @@ function solution(my_string, s, e) {
   return my_string.slice(0, s) + subString + my_string.slice(e + 1);
 }
 
-console.log(solution("Progra21Sremm3", 6, 12));
-console.log(solution("Stanley1yelnatS", 4, 10));
+console.log(solution("Progra21Sremm3", 6, 12)); //"ProgrammerS123"
+console.log(solution("Stanley1yelnatS", 4, 10)); //"Stanley1yelnatS"
+
+//Case2. replace 사용
+function solution(my_string, s, e) {
+  const str = my_string.slice(s, e + 1);
+  const newStr = my_string
+    .slice(s, e + 1)
+    .split("")
+    .reverse()
+    .join("");
+
+  return my_string.replace(str, newStr); //str 자리에 newStr을 넣어 return
+}
