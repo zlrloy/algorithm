@@ -10,6 +10,7 @@
 - filter는 배열에서 주어진 함수의 조건을 충족하는 모든 요소를 새로운 배열로 반환하고 find는 조건을 충족하는 첫 번째 요소를 반환하기 때문에 filter를 사용한다.
 */
 
+//Case1
 function solution(myString, pat) {
   let array = [];
   for (let i = 0; i < myString.length; i++) {
@@ -20,3 +21,9 @@ function solution(myString, pat) {
 
 console.log(solution("banana", "ana")); //2
 console.log(solution("aaaa", "aa")); //3
+
+//Case2
+function solution(myString, pat) {
+  const regex = new RegExp(`(?=${pat})`, "g");
+  return myString.match(regex)?.length || 0;
+}
