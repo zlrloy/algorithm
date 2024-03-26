@@ -4,6 +4,7 @@
 문자열 my_string이 매개변수로 주어질 때, my_string의 모든 접미사를 사전순으로 정렬한 문자열 배열을 return 하는 solution 함수를 작성해 주세요.
 */
 
+//Case1
 function solution(my_string) {
   let answer = [];
   for (let i = 0; i < my_string.length; i++) {
@@ -14,3 +15,10 @@ function solution(my_string) {
 
 console.log(solution("banana")); //["a", "ana", "anana", "banana", "na", "nana"]
 console.log(solution("programmers")); //["ammers", "ers", "grammers", "mers", "mmers", "ogrammers", "programmers", "rammers", "rogrammers", "rs", "s"]
+
+//Case2
+function solution(my_string) {
+  return Array.from(my_string)
+    .map((_, i) => my_string.substring(i))
+    .sort();
+}
