@@ -4,6 +4,7 @@
 arr[i][j] (0 ≤ i, j < n)의 값은 i = j라면 1, 아니라면 0입니다.
 */
 
+//Case1
 function solution(n) {
   const arr = Array(n).fill(Array(n).fill(0));
 
@@ -15,3 +16,14 @@ function solution(n) {
 console.log(solution(3)); //[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 console.log(solution(6)); //[[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]]
 console.log(solution(1)); //[[1]]
+
+//Case2
+function solution(n) {
+  const answer = Array.from(Array(n), () => Array(n).fill(0));
+
+  for (let i = 0; i < n; i++) {
+    answer[i][i] = 1;
+  }
+
+  return answer;
+}
