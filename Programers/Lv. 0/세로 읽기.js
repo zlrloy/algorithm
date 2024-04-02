@@ -21,3 +21,16 @@ console.log(solution("programmers", 1, 1)); //"programmers"
 function solution(my_string, m, c) {
   return [...my_string].filter((_, i) => i % m === c - 1).join("");
 }
+
+//Case3
+
+2;
+3;
+4;
+5;
+6;
+function solution(my_string, m, c) {
+  return Array.from(my_string).reduce((word, v, i) => {
+    return (i % m) + 1 === c ? word + v : word;
+  }, "");
+}
