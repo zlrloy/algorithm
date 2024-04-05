@@ -20,3 +20,12 @@ function solution(strArr) {
   for (let s of strArr) ans[s.length]++;
   return Math.max(...ans);
 }
+
+//Case3
+function solution(strArr) {
+  return Math.max(
+    ...Array(31)
+      .fill(0)
+      .map((_, i) => strArr.map((v) => v.length).filter((v) => v == i).length)
+  );
+}
