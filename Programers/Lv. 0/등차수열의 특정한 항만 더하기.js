@@ -4,6 +4,7 @@
 이 등차수열의 1항부터 n항까지 included가 true인 항들만 더한 값을 return 하는 solution 함수를 작성해 주세요.
 */
 
+//Case1
 function solution(a, d, included) {
   const sequence = [];
 
@@ -17,3 +18,10 @@ function solution(a, d, included) {
 
 console.log(solution(3, 4, [true, false, false, true, true])); //37
 console.log(solution(7, 1, [false, false, false, true, false, false, false])); //10
+
+//Case2
+function solution(a, d, included) {
+  return included.reduce((acc, flag, i) => {
+    return flag ? acc + a + d * i : acc;
+  }, 0);
+}
