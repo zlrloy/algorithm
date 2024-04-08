@@ -25,3 +25,12 @@ function solution(a, d, included) {
     return flag ? acc + a + d * i : acc;
   }, 0);
 }
+
+//Case3
+function solution(a, d, included) {
+  var answer = 0;
+  included.map((x, i) => {
+    if (x) answer += a + d * i;
+  });
+  return answer;
+}
