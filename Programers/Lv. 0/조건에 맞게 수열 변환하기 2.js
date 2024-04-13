@@ -5,6 +5,7 @@
 단, 두 배열에 대한 "="는 두 배열의 크기가 서로 같으며, 같은 인덱스의 원소가 각각 서로 같음을 의미합니다.
 */
 
+//Case1
 function solution(arr) {
   const operate = (num) =>
     num >= 50 && num % 2 === 0
@@ -29,3 +30,12 @@ function solution(arr) {
 }
 
 console.log(solution([1, 2, 3, 100, 99, 98])); //5
+
+//Case2
+function solution(arr, count = 0) {
+  const temp = [...arr].map((n) =>
+    n >= 50 && !(n % 2) ? n / 2 : n < 50 && n % 2 ? n * 2 + 1 : n
+  );
+  if (arr.every((n, i) => n === temp[i])) return count;
+  return Math.max(count, solution(temp, count + 1));
+}
