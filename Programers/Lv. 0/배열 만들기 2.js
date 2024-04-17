@@ -4,6 +4,7 @@
 만약 그러한 정수가 없다면, -1이 담긴 배열을 return 합니다.
 */
 
+//Case1
 function solution(l, r) {
   const result = [];
 
@@ -18,3 +19,11 @@ function solution(l, r) {
 
 console.log(solution(5, 555)); //[5, 50, 55, 500, 505, 550, 555]
 console.log(solution(10, 20)); //[-1]
+
+//Case 2
+function solution(l, r) {
+  const result = Array.from({ length: r - l + 1 }, (_, i) => i + l).filter(
+    (n) => !/[^05]/.test(n)
+  );
+  return result.length ? result : [-1];
+}
