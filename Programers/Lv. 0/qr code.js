@@ -5,10 +5,10 @@
 */
 
 function solution(q, r, code) {
-  let result = "";
+  let result = '';
   [...code].map((a, i) => (i % q === r ? (result += a) : result));
   return result;
 }
 
-console.log(solution(3, 1, "qjnwezgrpirldywt")); //"jerry"
-console.log(solution(1, 0, "programmers")); //"programmers"
+console.log(solution(3, 1, 'qjnwezgrpirldywt')); //'jerry'
+console.log(solution(1, 0, 'programmers')); //'programmers'
