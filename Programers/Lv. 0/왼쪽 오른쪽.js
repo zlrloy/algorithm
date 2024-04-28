@@ -6,6 +6,7 @@ str_list에서 "l"과 "r" 중 먼저 나오는 문자열이 "l"이라면 해당 
 "l"이나 "r"이 없다면 빈 리스트를 return합니다.
 */
 
+//Case1
 function solution(str_list) {
   const lIndex = str_list.indexOf("l");
   const rIndex = str_list.indexOf("r");
@@ -21,3 +22,12 @@ function solution(str_list) {
 
 console.log(solution(["u", "u", "l", "r"])); //["u", "u"]
 console.log(solution(["l"])); //[]
+
+//Case2
+function solution(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "l") return arr.slice(0, i);
+    if (arr[i] === "r") return arr.slice(i + 1);
+  }
+  return [];
+}
