@@ -4,6 +4,7 @@
 i + j <= k를 만족하는 모든 (i, j)에 대한 board[i][j]의 합을 return 하는 solution 함수를 완성해 주세요.
 */
 
+//Case1
 function solution(board, k) {
   var answer = 0;
   for (let i = 0; i < board.length; i += 1) {
@@ -27,3 +28,8 @@ console.log(
     2
   )
 ); //8
+
+//Case2
+function solution(board, k) {
+  return board.reduce((total, row, i) => total + row.reduce((prev, num, j) => (i + j <= k ? prev + num : prev), 0), 0);
+}
