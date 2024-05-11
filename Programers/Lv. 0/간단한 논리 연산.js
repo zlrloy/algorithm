@@ -16,3 +16,8 @@ console.log(solution(true, false, false, false)); //false
 function solution(x1, x2, x3, x4) {
   return (x1 + x2) * (x3 + x4) ? true : false;
 }
+
+function solution(arr, k) {
+  const deduplicateValues = [...new Set(arr)];
+  return deduplicateValues.length >= k ? deduplicateValues.slice(0, k) : arr.slice(0, k).fill(-1, deduplicateValues.length);
+}
