@@ -7,6 +7,7 @@
 단, 완성될 배열의 길이가 k보다 작으면 나머지 값을 전부 -1로 채워서 return 합니다.
 */
 
+//Case1
 function solution(arr, k) {
   const deduplicateValues = [...new Set(arr)];
   return deduplicateValues.length >= k ? deduplicateValues.slice(0, k) : deduplicateValues.slice(0, k).concat(Array(k - deduplicateValues.length).fill(-1));
@@ -16,3 +17,9 @@ console.log(solution([0, 1, 1, 2, 2, 3], 3)); //[0, 1, 2]
 console.log(solution([0, 1, 1, 1, 1], 4)); //[0, 1, -1, -1]
 console.log(solution([0, 1, 2, 2, 3], 4)); //[0, 1, 2, 3]
 console.log(solution([0, 1], 4)); //[0, 1, -1, -1]
+
+//Case2
+function solution(arr, k) {
+  const set = new Set(arr);
+  return set.size < k ? [...set, ...Array(k - set.size).fill(-1)] : [...set].slice(0, k);
+}
