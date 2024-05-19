@@ -4,6 +4,7 @@
 my_string에서 'a'의 개수, my_string에서 'b'의 개수,..., my_string에서 'z'의 개수를 순서대로 담은 길이 52의 정수 배열을 return 하는 solution 함수를 작성해 주세요.
 */
 
+//Case1
 function solution(my_string) {
   const counts = new Array(52).fill(0);
   const alphabets = my_string.match(/[a-zA-Z]/g).join("");
@@ -21,3 +22,13 @@ function solution(my_string) {
 }
 
 console.log(solution("Programmers")); //[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0]
+
+//Case2
+function solution(my_string) {
+  let alp = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  var answer = new Array(52).fill(0);
+  for (let i = 0; i < my_string.length; i++) {
+    answer[alp.indexOf(my_string[i])]++;
+  }
+  return answer;
+}
