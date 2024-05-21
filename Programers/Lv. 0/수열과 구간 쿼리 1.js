@@ -5,6 +5,7 @@
 위 규칙에 따라 queries를 처리한 이후의 arr를 return 하는 solution 함수를 완성해 주세요.
 */
 
+//Case1
 function solution(arr, queries) {
   queries.forEach(([s, e]) => {
     while (s <= e) arr[s++]++;
@@ -22,3 +23,16 @@ console.log(
     ]
   )
 ); //[1, 3, 4, 4, 4]
+
+//Case2
+function solution(arr, q) {
+  let answer = [];
+
+  q.map((a) => {
+    for (let i = a[0]; i <= a[1]; i++) {
+      arr[i] += 1;
+    }
+  });
+
+  return arr;
+}
