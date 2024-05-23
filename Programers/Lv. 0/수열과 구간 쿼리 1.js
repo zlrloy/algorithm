@@ -36,3 +36,16 @@ function solution(arr, q) {
 
   return arr;
 }
+
+//Case3
+function solution(arr, queries) {
+  const N = arr.length;
+
+  for (const [start, end] of queries) {
+    for (let i = start; i <= end; i += 1) {
+      arr[i] += 1;
+    }
+  }
+
+  return arr;
+}
