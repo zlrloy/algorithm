@@ -9,6 +9,7 @@ stk에 원소가 있는데 stk의 마지막 원소가 arr[i]와 다르면 stk의
 단, 만약 빈 배열을 return 해야한다면 [-1]을 return 합니다.
 */
 
+//Case1
 function solution(arr) {
   let stack = [arr[0]];
   for (let i = 1; i < arr.length; i++) {
@@ -20,3 +21,20 @@ function solution(arr) {
 console.log(solution([0, 1, 1, 1, 0])); //[0, 1, 0]
 console.log(solution([0, 1, 0, 1, 0])); //[0, 1, 0, 1, 0]
 console.log(solution([0, 1, 1, 0])); //[-1]
+
+//Case2
+function solution(arr) {
+  let stk = [];
+  arr.forEach((x, i) => {
+    if (x !== stk[stk.length - 1]) {
+      stk.push(x);
+    } else {
+      stk.splice(-1);
+    }
+  });
+
+  if (stk.length == 0) {
+    stk = [-1];
+  }
+  return stk;
+}
