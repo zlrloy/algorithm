@@ -6,6 +6,7 @@
 단, 특정 쿼리의 답이 존재하지 않으면 -1을 저장합니다.
 */
 
+//Case1
 function solution(arr, queries) {
   let answer = [];
   for (let [s, e, k] of queries) {
@@ -26,3 +27,14 @@ console.log(
     ]
   )
 ); //[3, 4, -1]
+
+//Case2
+function solution(arr, queries) {
+  return queries.map(
+    ([s, e, k]) =>
+      arr
+        .slice(s, e + 1)
+        .filter((n) => n > k)
+        .sort((a, b) => a - b)[0] || -1
+  );
+}
