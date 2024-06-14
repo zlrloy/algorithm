@@ -38,3 +38,16 @@ function solution(arr, queries) {
         .sort((a, b) => a - b)[0] || -1
   );
 }
+
+//Case3
+function solution(arr, queries) {
+  return queries.map(([s, e, k]) => {
+    let result = -1;
+    for (let i = s; i <= e; i += 1) {
+      const v = arr[i];
+      if (v <= k) continue;
+      result = result === -1 ? v : Math.min(result, v);
+    }
+    return result;
+  });
+}
