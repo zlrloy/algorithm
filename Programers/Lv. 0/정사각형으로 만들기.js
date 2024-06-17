@@ -6,7 +6,6 @@ arr의 행의 수가 더 많다면 열의 수가 행의 수와 같아지도록 �
 */
 
 //Case1
-
 function solution(arr) {
   const max = Math.max(arr.length, arr[0].length);
 
@@ -40,3 +39,11 @@ console.log(
     [3, 4],
   ])
 ); //[[1, 2], [3, 4]]
+
+//Case2
+function solution(arr) {
+  let n = Math.max(arr.length, Math.max(...arr.map((v) => v.length)));
+  for (let a of arr) while (a.length < n) a.push(0);
+  while (arr.length < n) arr.push(Array(n).fill(0));
+  return arr;
+}
