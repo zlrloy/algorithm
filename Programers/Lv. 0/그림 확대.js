@@ -25,3 +25,15 @@ function solution(picture, k) {
 
 console.log(solution([".xx...xx.", "x..x.x..x", "x...x...x", ".x.....x.", "..x...x..", "...x.x...", "....x...."], 2)); //["..xxxx......xxxx..", "..xxxx......xxxx..", "xx....xx..xx....xx", "xx....xx..xx....xx", "xx......xx......xx", "xx......xx......xx", "..xx..........xx..", "..xx..........xx..", "....xx......xx....", "....xx......xx....", "......xx..xx......", "......xx..xx......", "........xx........", "........xx........"]
 console.log(solution(["x.x", ".x.", "x.x"], 3)); //["xxx...xxx", "xxx...xxx", "xxx...xxx", "...xxx...", "...xxx...", "...xxx...", "xxx...xxx", "xxx...xxx", "xxx...xxx"]
+
+//Case2
+function solution(picture, k) {
+  let result = [];
+
+  picture.map((v) => {
+    const cur = [...v].map((c) => c.repeat(k)).join("");
+    for (let i = 0; i < k; i++) result.push(cur);
+  });
+
+  return result;
+}
