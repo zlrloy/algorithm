@@ -62,3 +62,13 @@ function solution(code) {
     }, "") || "EMPTY"
   );
 }
+
+//Case4
+function solution(code) {
+  var answer = code
+    .replaceAll("1", "")
+    .split("")
+    .filter((val, idx) => idx % 2 === 0)
+    .join("");
+  return answer.length > 0 ? answer : "EMPTY";
+}
