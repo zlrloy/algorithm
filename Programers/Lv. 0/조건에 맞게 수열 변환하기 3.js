@@ -16,7 +16,18 @@ function solution(arr, k) {
 }
 
 console.log(solution([1, 2, 3, 100, 99, 98], 3)); //[3, 6, 9, 300, 297, 294]
-console.log(solution([1, 2, 3, 100, 99, 98], 3)); //[3, 4, 5, 102, 101, 100]
+console.log(solution([1, 2, 3, 100, 99, 98], 2)); //[3, 4, 5, 102, 101, 100]
 
 //Case2. 중괄호를 생략하면 return도 생략 가능하다.
 const solution = (arr, k) => arr.map((v) => (k % 2 ? v * k : v + k));
+
+//Case3.
+function solution(arr, k) {
+  if (k % 2 !== 0) {
+    return arr.map((x) => x * k);
+  } else if (k % 2 === 0) {
+    return arr.map((x) => x + k);
+  } else {
+    return false;
+  }
+}
