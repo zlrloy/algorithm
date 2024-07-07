@@ -7,9 +7,18 @@ query를 순회하면서 다음 작업을 반복합니다.
 위 작업을 마친 후 남은 arr의 부분 배열을 return 하는 solution 함수를 완성해 주세요.
 */
 
+//Case1
 function solution(arr, query) {
   for (let i = 0; i < query.length; i++) {
     i % 2 ? arr.splice(0, query[i]) : arr.splice(query[i] + 1);
   }
+  return arr;
+}
+
+console.log(solution([0, 1, 2, 3, 4, 5], [4, 1, 2])); //[1, 2, 3]
+
+//Case2
+function solution(arr, query) {
+  query.map((v, i) => (i % 2 ? arr.splice(0, v) : arr.splice(v + 1)));
   return arr;
 }
