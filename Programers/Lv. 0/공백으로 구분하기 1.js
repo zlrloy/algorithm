@@ -12,3 +12,8 @@ function solution(my_string) {
 
 console.log(solution("i love you")); //["i", "love", "you"]
 console.log(solution("programmers")); //["programmers"]
+
+//Case2
+function solution(my_string) {
+  return my_string.split(" ");
+}
