@@ -4,8 +4,7 @@
 */
 
 function solution(num1, num2) {
-  const divide = num1 / num2;
-  return Math.floor(divide);
+  return Math.floor(num1 / num2);
 }
 
 console.log(solution(10, 5)); //2
