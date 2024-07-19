@@ -8,6 +8,7 @@
 평각 : angle = 180
 */
 
+//Case1
 function solution(angle) {
   if (0 < angle && angle < 90) {
     return 1;
@@ -26,3 +27,8 @@ function solution(angle) {
 console.log(solution(70)); //1
 console.log(solution(91)); //3
 console.log(solution(180)); //4
+
+//Case2
+function solution(angle) {
+  return angle < 90 ? 1 : angle === 90 ? 2 : angle < 180 ? 3 : 4;
+}
