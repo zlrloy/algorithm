@@ -7,15 +7,10 @@
 */
 
 function solution(hp) {
-  const count5 = Math.floor(hp / 5);
-  let remainder = hp % 5;
-
-  const count3 = Math.floor(remainder / 3);
-  remainder = remainder % 3;
-
-  const count1 = remainder;
-
-  return count5 + count3 + count1;
+  const generalAnt = Math.floor(hp / 5);
+  const soldierAnt = Math.floor((hp - generalAnt * 5) / 3);
+  const workerAnt = hp - (generalAnt * 5 + soldierAnt * 3);
+  return generalAnt + soldierAnt + workerAnt;
 }
 
 console.log(solution(23)); //5
