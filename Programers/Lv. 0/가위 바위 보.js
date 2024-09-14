@@ -5,6 +5,7 @@
 rsp에 저장된 가위 바위 보를 모두 이기는 경우를 순서대로 나타낸 문자열을 return하도록 solution 함수를 완성해보세요.
 */
 
+//Case1
 function solution(rsp) {
   return rsp
     .split("")
@@ -14,3 +15,14 @@ function solution(rsp) {
 
 console.log(solution("2")); //"0"
 console.log(solution("205")); //"052"
+
+//Case2
+function solution(rsp) {
+  let arr = {
+    2: 0,
+    0: 5,
+    5: 2,
+  };
+  let result = [...rsp].map((v) => arr[v]).join("");
+  return result;
+}
