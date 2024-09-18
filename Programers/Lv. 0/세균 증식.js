@@ -18,3 +18,8 @@ console.log(solution(7, 15)); //229,376
 function solution(n, t) {
   return n << t;
 }
+
+//Case3
+function solution(n, t) {
+  return n * Math.pow(2, t);
+}
