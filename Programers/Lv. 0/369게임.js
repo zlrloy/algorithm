@@ -11,3 +11,11 @@ function solution(order) {
     .split("")
     .filter((digit) => ["3", "6", "9"].includes(digit)).length;
 }
+
+console.log(solution(3)); //1
+console.log(solution(29423)); //2
+
+//Case 2
+function solution(order) {
+  return ("" + order).split(/[369]/).length - 1; //369 기준으로 문자열을 나눠 배열로 반환
+}
