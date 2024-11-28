@@ -15,3 +15,8 @@ function solution(array) {
 function solution(array) {
   return array.join("").split("7").length - 1;
 }
+
+//Case3
+function solution(array) {
+  return Array.from(array.join("")).filter((v) => v === "7").length;
+}
