@@ -5,6 +5,7 @@ num_list가 [1, 2, 3, 4, 5, 6, 7, 8] 로 길이가 8이고 n이 2이므로 num_l
 2차원으로 바꿀 때에는 num_list의 원소들을 앞에서부터 n개씩 나눠 2차원 배열로 변경합니다.
 */
 
+//Case1
 function solution(num_list, n) {
   let array = [];
 
@@ -17,3 +18,10 @@ function solution(num_list, n) {
 
 console.log(solution([1, 2, 3, 4, 5, 6, 7, 8], 2)); //[[1, 2], [3, 4], [5, 6], [7, 8]]
 console.log(solution([100, 95, 2, 4, 5, 6, 18, 33, 948], 3)); //[[100, 95, 2], [4, 5, 6], [18, 33, 948]]
+
+//Case2
+function solution(num_list, n) {
+  return Array(num_list.length / n)
+    .fill([])
+    .map(() => num_list.splice(0, n));
+}
