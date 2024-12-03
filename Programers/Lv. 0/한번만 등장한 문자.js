@@ -4,6 +4,7 @@
 한 번만 등장하는 문자가 없을 경우 빈 문자열을 return 합니다.
 */
 
+//Case1
 function solution(inputString) {
   let result = [];
 
@@ -15,3 +16,13 @@ function solution(inputString) {
 console.log(solution("abcabcadc")); //"d"
 console.log(solution("abdc")); //"abcd"
 console.log(solution("hello")); //"eho"
+
+//Case2
+function solution(s) {
+  return [...s]
+    .filter(function (c) {
+      return s.match(new RegExp(c, "g")).length == 1;
+    })
+    .sort()
+    .join("");
+}
