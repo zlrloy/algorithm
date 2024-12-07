@@ -4,21 +4,20 @@ my_string은 "3 + 5"처럼 문자열로 된 수식입니다. 문자열 my_string
 */
 
 function solution(my_string) {
-  const tokens = my_string.split(" ");
-  let result = Number(tokens[0]);
+  const stack = [];
 
-  for (let i = 1; i < tokens.length; i += 2) {
-    const operator = tokens[i];
-    const number = Number(tokens[i + 1]);
-
-    if (operator === "+") {
-      result += number;
-    } else if (operator === "-") {
-      result -= number;
+  let sign = 1;
+  for (const ch of my_string.split(" ")) {
+    if (ch === "+") {
+      sign = 1;
+    } else if (ch === "-") {
+      sign = -1;
+    } else {
+      stack.push(ch * sign);
     }
   }
 
-  return result;
+  return stack.reduce((a, b) => a + b, 0);
 }
 
 console.log(solution("3 + 4")); //7
