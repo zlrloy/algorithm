@@ -4,6 +4,7 @@
 문자열 numbers가 매개변수로 주어질 때, numbers를 정수로 바꿔 return 하도록 solution 함수를 완성해 주세요.
 */
 
+//Case1
 function solution(numbers) {
   const obj = {
     zero: 0,
@@ -27,3 +28,12 @@ function solution(numbers) {
 
 console.log(solution("onetwothreefourfivesixseveneightnine")); //123456789
 console.log(solution("onefourzerosixseven")); //14067
+
+//Case2
+function solution(numbers) {
+  const number = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+  for (let i = 0; i < number.length; i++) {
+    numbers = numbers.split(number[i]).join(i);
+  }
+  return +numbers;
+}
