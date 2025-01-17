@@ -8,6 +8,7 @@ x 좌표가 양수, y 좌표가 음수이면 제4사분면에 속합니다.
 x 좌표 (x, y)를 차례대로 담은 정수 배열 dot이 매개변수로 주어집니다. 좌표 dot이 사분면 중 어디에 속하는지 1, 2, 3, 4 중 하나를 return 하도록 solution 함수를 완성해주세요.
 */
 
+//Case1
 function solution(dot) {
   const [x, y] = dot;
   if (x > 0 && y > 0) {
@@ -25,3 +26,8 @@ function solution(dot) {
 
 console.log(solution([2, 4])); //1
 console.log(solution([-7, 9])); //2
+
+//Case2
+function solution(dot) {
+  return dot[0] > 0 ? (dot[1] > 0 ? 1 : 4) : dot[1] > 0 ? 2 : 3;
+}
