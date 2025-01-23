@@ -23,7 +23,7 @@ SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY
 ORDER BY FACTORY_ID ASC;
 
--- 강원도에 위치한 식품공장 조회
+-- 강원도에 위치한 식품공장 조회 (%는 와일드카드로, "강원도"가 주소의 어느 위치에 있든지 포함되는 값을 찾음)
 SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY
 WHERE ADDRESS LIKE '%강원도%'
