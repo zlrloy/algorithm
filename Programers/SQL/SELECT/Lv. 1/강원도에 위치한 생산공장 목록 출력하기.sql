@@ -14,16 +14,16 @@ FOOD_FACTORY 테이블에서 강원도에 위치한 식품공장의 공장 ID, �
 */
 
 -- 풀이
--- 식품공장의 공장 ID, 공장 이름, 주소 조회
+-- 1. 식품공장의 공장 ID, 공장 이름, 주소 조회
 SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY;
 
--- 공장 ID를 기준으로 오름차순 정렬
+-- 2. 공장 ID를 기준으로 오름차순 정렬
 SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY
 ORDER BY FACTORY_ID ASC;
 
--- 강원도에 위치한 식품공장 조회 (%는 와일드카드로, "강원도"가 주소의 어느 위치에 있든지 포함되는 값을 찾음)
+-- 3. 강원도에 위치한 식품공장 조회 (%는 와일드카드로, "강원도"가 주소의 어느 위치에 있든지 포함되는 값을 찾음)
 SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
 FROM FOOD_FACTORY
 WHERE ADDRESS LIKE '%강원도%'
