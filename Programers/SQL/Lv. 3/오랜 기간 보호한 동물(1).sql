@@ -19,13 +19,13 @@ NAME	VARCHAR(N)	TRUE
 SEX_UPON_OUTCOME	VARCHAR(N)	FALSE
 
 문제
-관리자의 실수로 일부 동물의 입양일이 잘못 입력되었습니다. 보호 시작일보다 입양일이 더 빠른 동물의 아이디와 이름을 조회하는 SQL문을 작성해주세요. 이때 결과는 보호 시작일이 빠른 순으로 조회해야합니다.
+아직 입양을 못 간 동물 중, 가장 오래 보호소에 있었던 동물 3마리의 이름과 보호 시작일을 조회하는 SQL문을 작성해주세요. 이때 결과는 보호 시작일 순으로 조회해야 합니다.
 */
 
--- 풀이
-SELECT OUTS.ANIMAL_ID, OUTS.NAME
-FROM ANIMAL_OUTS OUTS
-LEFT JOIN ANIMAL_INS INS
+SELECT INS.NAME, INS.DATETIME
+FROM ANIMAL_INS INS
+LEFT JOIN ANIMAL_OUTS OUTS
        ON OUTS.ANIMAL_ID = INS.ANIMAL_ID
-WHERE OUTS.DATETIME < INS.DATETIME
+WHERE OUTS.ANIMAL_ID IS NULL
 ORDER BY INS.DATETIME
+LIMIT 3;
